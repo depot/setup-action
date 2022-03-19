@@ -1,0 +1,16 @@
+name: Set up depot CLI
+description: Installs the Depot CLI into the GitHub Actions environment
+author: Depot
+branding:
+  icon: package
+  color: gray-dark
+runs:
+  using: node16
+  main: dist/index.js
+inputs:
+  version:
+    description: |-
+      Version of the Depot CLI to install. If unspecified or set to "latest",
+      the latest version for the target platform will be installed. Example: "0.0.2".
+    default: latest
+    required: false

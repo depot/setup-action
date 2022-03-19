@@ -1,0 +1,121 @@
+lockfileVersion: 5.3
+
+specifiers:
+  '@actions/core': ^1.6.0
+  '@actions/http-client': ^1.0.11
+  '@actions/tool-cache': ^1.7.2
+  '@tsconfig/node16': ^1.0.2
+  '@types/node': 16.x
+  '@vercel/ncc': ^0.33.3
+  prettier: ^2.6.0
+  prettier-plugin-organize-imports: ^2.3.4
+  prettier-plugin-pkg: ^0.11.1
+  typescript: ^4.6.2
+
+dependencies:
+  '@actions/core': 1.6.0
+  '@actions/http-client': 1.0.11
+  '@actions/tool-cache': 1.7.2
+
+devDependencies:
+  '@tsconfig/node16': 1.0.2
+  '@types/node': 16.11.26
+  '@vercel/ncc': 0.33.3
+  prettier: 2.6.0
+  prettier-plugin-organize-imports: 2.3.4_prettier@2.6.0+typescript@4.6.2
+  prettier-plugin-pkg: 0.11.1_prettier@2.6.0
+  typescript: 4.6.2
+
+packages:
+
+  /@actions/core/1.6.0:
+    resolution: {integrity: sha512-NB1UAZomZlCV/LmJqkLhNTqtKfFXJZAUPcfl/zqG7EfsQdeUJtaWO98SGbuQ3pydJ3fHl2CvI/51OKYlCYYcaw==}
+    dependencies:
+      '@actions/http-client': 1.0.11
+    dev: false
+
+  /@actions/exec/1.1.1:
+    resolution: {integrity: sha512-+sCcHHbVdk93a0XT19ECtO/gIXoxvdsgQLzb2fE2/5sIZmWQuluYyjPQtrtTHdU1YzTZ7bAPN4sITq2xi1679w==}
+    dependencies:
+      '@actions/io': 1.1.2
+    dev: false
+
+  /@actions/http-client/1.0.11:
+    resolution: {integrity: sha512-VRYHGQV1rqnROJqdMvGUbY/Kn8vriQe/F9HR2AlYHzmKuM/p3kjNuXhmdBfcVgsvRWTz5C5XW5xvndZrVBuAYg==}
+    dependencies:
+      tunnel: 0.0.6
+    dev: false
+
+  /@actions/io/1.1.2:
+    resolution: {integrity: sha512-d+RwPlMp+2qmBfeLYPLXuSRykDIFEwdTA0MMxzS9kh4kvP1ftrc/9fzy6pX6qAjthdXruHQ6/6kjT/DNo5ALuw==}
+    dev: false
+
+  /@actions/tool-cache/1.7.2:
+    resolution: {integrity: sha512-GYlcgg/PK2RWBrGG2sFg6s7im3S94LMKuqAv8UPDq/pGTZbuEvmN4a95Fn1Z19OE+vt7UbUHeewOD5tEBT+4TQ==}
+    dependencies:
+      '@actions/core': 1.6.0
+      '@actions/exec': 1.1.1
+      '@actions/http-client': 1.0.11
+      '@actions/io': 1.1.2
+      semver: 6.3.0
+      uuid: 3.4.0
+    dev: false
+
+  /@tsconfig/node16/1.0.2:
+    resolution: {integrity: sha512-eZxlbI8GZscaGS7kkc/trHTT5xgrjH3/1n2JDwusC9iahPKWMRvRjJSAN5mCXviuTGQ/lHnhvv8Q1YTpnfz9gA==}
+    dev: true
+
+  /@types/node/16.11.26:
+    resolution: {integrity: sha512-GZ7bu5A6+4DtG7q9GsoHXy3ALcgeIHP4NnL0Vv2wu0uUB/yQex26v0tf6/na1mm0+bS9Uw+0DFex7aaKr2qawQ==}
+    dev: true
+
+  /@vercel/ncc/0.33.3:
+    resolution: {integrity: sha512-JGZ11QV+/ZcfudW2Cz2JVp54/pJNXbsuWRgSh2ZmmZdQBKXqBtIGrwI1Wyx8nlbzAiEFe7FHi4K1zX4//jxTnQ==}
+    hasBin: true
+    dev: true
+
+  /prettier-plugin-organize-imports/2.3.4_prettier@2.6.0+typescript@4.6.2:
+    resolution: {integrity: sha512-R8o23sf5iVL/U71h9SFUdhdOEPsi3nm42FD/oDYIZ2PQa4TNWWuWecxln6jlIQzpZTDMUeO1NicJP6lLn2TtRw==}
+    peerDependencies:
+      prettier: '>=2.0'
+      typescript: '>=2.9'
+    dependencies:
+      prettier: 2.6.0
+      typescript: 4.6.2
+    dev: true
+
+  /prettier-plugin-pkg/0.11.1_prettier@2.6.0:
+    resolution: {integrity: sha512-xuSSyiZS1osFVBB5w3fTpUiqGfSS5c0Azh78nWr4Q9viA9nYJyYAiI4FcyltjowsIGMF5IFGtG58DdDkNifoFQ==}
+    peerDependencies:
+      prettier: ^2.0.0
+    dependencies:
+      prettier: 2.6.0
+    dev: true
+
+  /prettier/2.6.0:
+    resolution: {integrity: sha512-m2FgJibYrBGGgQXNzfd0PuDGShJgRavjUoRCw1mZERIWVSXF0iLzLm+aOqTAbLnC3n6JzUhAA8uZnFVghHJ86A==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
+
+  /semver/6.3.0:
+    resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
+    hasBin: true
+    dev: false
+
+  /tunnel/0.0.6:
+    resolution: {integrity: sha512-1h/Lnq9yajKY2PEbBadPXj3VxsDDu844OnaAo52UVmIzIvwwtBPIuNvkjuzBlTWpfJyUbG3ez0KSBibQkj4ojg==}
+    engines: {node: '>=0.6.11 <=0.7.0 || >=0.7.3'}
+    dev: false
+
+  /typescript/4.6.2:
+    resolution: {integrity: sha512-HM/hFigTBHZhLXshn9sN37H085+hQGeJHJ/X7LpBWLID/fbc2acUMfU+lGD98X81sKP+pFa9f0DZmCwB9GnbAg==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true
+
+  /uuid/3.4.0:
+    resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}
+    deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+    hasBin: true
+    dev: false
