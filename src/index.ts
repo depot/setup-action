@@ -1,6 +1,7 @@
 import * as core from '@actions/core'
 import * as http from '@actions/http-client'
 import * as toolCache from '@actions/tool-cache'
+import * as path from 'path'
 
 type ApiResponse = {ok: true; url: string} | {ok: false; error: string}
 
@@ -39,7 +40,7 @@ async function resolveVersion(version: string) {
 async function installDepotCLI(url: string, resolvedVersion: string) {
   const tarPath = await toolCache.downloadTool(url)
   const extractedPath = await toolCache.extractTar(tarPath)
-  const cachedPath = await toolCache.cacheDir(extractedPath, 'depot', resolvedVersion)
+  const cachedPath = await toolCache.cacheDir(path.join(extractedPath, 'bin'), 'depot', resolvedVersion)
   core.addPath(cachedPath)
 }
 

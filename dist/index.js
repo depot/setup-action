@@ -5438,6 +5438,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__nccwpck_require__(31));
 const http = __importStar(__nccwpck_require__(875));
 const toolCache = __importStar(__nccwpck_require__(723));
+const path = __importStar(__nccwpck_require__(17));
 const client = new http.HttpClient('setup-depot');
 async function run() {
     // Get user-specified version to install (defaults to "latest")
@@ -5467,7 +5468,7 @@ async function resolveVersion(version) {
 async function installDepotCLI(url, resolvedVersion) {
     const tarPath = await toolCache.downloadTool(url);
     const extractedPath = await toolCache.extractTar(tarPath);
-    const cachedPath = await toolCache.cacheDir(extractedPath, 'depot', resolvedVersion);
+    const cachedPath = await toolCache.cacheDir(path.join(extractedPath, 'bin'), 'depot', resolvedVersion);
     core.addPath(cachedPath);
 }
 run().catch((error) => {
