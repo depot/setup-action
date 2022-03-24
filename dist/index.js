@@ -5439,7 +5439,7 @@ const core = __importStar(__nccwpck_require__(31));
 const http = __importStar(__nccwpck_require__(875));
 const toolCache = __importStar(__nccwpck_require__(723));
 const path = __importStar(__nccwpck_require__(17));
-const client = new http.HttpClient('setup-depot');
+const client = new http.HttpClient('depot-setup-action');
 async function run() {
     // Get user-specified version to install (defaults to "latest")
     const version = core.getInput('version');

@@ -5,7 +5,7 @@ import * as path from 'path'
 
 type ApiResponse = {ok: true; url: string} | {ok: false; error: string}
 
-const client = new http.HttpClient('setup-depot')
+const client = new http.HttpClient('depot-setup-action')
 
 async function run() {
   // Get user-specified version to install (defaults to "latest")

@@ -1,4 +1,4 @@
-# `setup-depot` GitHub Action
+# Depot `setup-action` GitHub Action
 
 Provides the [Depot CLI](https://github.com/depot/cli) in the GitHub Actions environment, allowing access to the `depot` binary in subsequent workflow steps.
 
@@ -10,7 +10,7 @@ Download and install the latest version of the CLI:
 jobs:
   job-name:
     steps:
-      - uses: depot/setup-depot@v1
+      - uses: depot/setup-action@v1
       - run: depot ...
 ```
 
@@ -20,7 +20,7 @@ Download and install a specific version of the CLI:
 jobs:
   job-name:
     steps:
-      - uses: depot/setup-depot@v1
+      - uses: depot/setup-action@v1
         with:
           version: 1.2.3
       - run: depot ...
@@ -38,7 +38,7 @@ The `depot` CLI can read a Depot API token from the `DEPOT_TOKEN` environment va
 jobs:
   job-name:
     steps:
-      - uses: depot/setup-depot@v1
+      - uses: depot/setup-action@v1
       - run: depot build ...
         env:
           DEPOT_TOKEN: ${{ secrets.DEPOT_TOKEN }}
