@@ -23,6 +23,25 @@ async function run() {
   }
 
   core.info(`depot ${resolvedVersion} is installed`)
+
+  // Attempt to exchange GitHub Actions OIDC token for temporary Depot trust relationship token
+  if (core.getBooleanInput('oidc')) {
+    if (!process.env.DEPOT_TOKEN) {
+      try {
+        const odicToken = await core.getIDToken('https://depot.dev')
+        const res = await client.postJson<{ok: boolean; token: string}>(
+          'https://depot.dev/api/auth/oidc/github-actions',
+          {token: odicToken},
+        )
+        if (res.result && res.result.token) {
+          core.info(`Exchanged GitHub Actions OIDC token for temporary Depot token`)
+          core.exportVariable('DEPOT_TOKEN', res.result.token)
+        }
+      } catch (err) {
+        core.info(`Unable to exchange GitHub OIDC token for temporary Depot token: ${err}`)
+      }
+    }
+  }
 }
 
 async function resolveVersion(version: string) {

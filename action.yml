@@ -14,3 +14,9 @@ inputs:
       the latest version for the target platform will be installed. Example: "0.0.2".
     default: latest
     required: false
+  oidc:
+    description: |-
+      If set to true, the action will authenticate with the Depot API using OIDC
+      and save the returned token as environment a `DEPOT_TOKEN` environment variable.
+    default: 'false'
+    required: false

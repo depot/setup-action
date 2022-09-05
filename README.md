@@ -29,6 +29,7 @@ jobs:
 ## Inputs
 
 - `version` (optional) - A string representing the version of the Depot CLI to install (e.g. `1.2.3`). The default value is `latest` which will install the latest available version. Can also specify a semver version range selector (e.g. `0.x.x`).
+- `oidc` (optional) - A boolean value indicating, if `true` the action will authenticate with the Depot API using GitHub Actions OIDC and set the `DEPOT_TOKEN` environment variable for future steps. This is typically not needed if you are using the `depot/build-push-action` action. The default value is `false`.
 
 ## Authentication
 
