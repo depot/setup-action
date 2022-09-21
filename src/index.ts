@@ -45,7 +45,7 @@ async function run() {
 }
 
 async function resolveVersion(version: string) {
-  const res = await client.get(`https://depot.dev/api/cli/release/${process.platform}/${process.arch}/${version}`)
+  const res = await client.get(`https://dl.depot.dev/cli/release/${process.platform}/${process.arch}/${version}`)
   const body = await res.readBody()
   const response: ApiResponse = JSON.parse(body)
 
