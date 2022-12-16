@@ -5459,7 +5459,7 @@ async function run() {
         if (!process.env.DEPOT_TOKEN) {
             try {
                 const odicToken = await core.getIDToken('https://depot.dev');
-                const res = await client.postJson('https://depot.dev/api/auth/oidc/github-actions', { token: odicToken });
+                const res = await client.postJson('https://github.depot.dev/auth/oidc/github-actions', { token: odicToken });
                 if (res.result && res.result.token) {
                     core.info(`Exchanged GitHub Actions OIDC token for temporary Depot token`);
                     core.exportVariable('DEPOT_TOKEN', res.result.token);
