@@ -1,6 +1,8 @@
 import * as core from '@actions/core'
+import * as github from '@actions/github'
 import * as http from '@actions/http-client'
 import * as toolCache from '@actions/tool-cache'
+import * as publicOIDC from '@depot/actions-public-oidc-client'
 import * as path from 'path'
 
 type ApiResponse = {ok: true; url: string} | {ok: false; error: string}
@@ -27,6 +29,7 @@ async function run() {
   // Attempt to exchange GitHub Actions OIDC token for temporary Depot trust relationship token
   if (core.getBooleanInput('oidc')) {
     if (!process.env.DEPOT_TOKEN) {
+      let tokenFound = false
       try {
         const odicToken = await core.getIDToken('https://depot.dev')
         const res = await client.postJson<{ok: boolean; token: string}>(
@@ -36,9 +39,28 @@ async function run() {
         if (res.result && res.result.token) {
           core.info(`Exchanged GitHub Actions OIDC token for temporary Depot token`)
           core.exportVariable('DEPOT_TOKEN', res.result.token)
+          tokenFound = true
         }
       } catch (err) {
         core.info(`Unable to exchange GitHub OIDC token for temporary Depot token: ${err}`)
+      }
+
+      if (!tokenFound) {
+        const isOSSPullRequest =
+          github.context.eventName === 'pull_request' &&
+          github.context.payload.repository?.private === false &&
+          github.context.payload.pull_request &&
+          github.context.payload.pull_request.head?.repo?.full_name !== github.context.payload.repository?.full_name
+        if (isOSSPullRequest) {
+          try {
+            core.info('Attempting to acquire open-source pull request OIDC token')
+            const oidcToken = await publicOIDC.getIDToken('https://depot.dev')
+            core.info(`Using open-source pull request OIDC token for Depot authentication`)
+            core.exportVariable('DEPOT_TOKEN', oidcToken)
+          } catch (err) {
+            core.info(`Unable to exchange open-source pull request OIDC token for temporary Depot token: ${err}`)
+          }
+        }
       }
     }
   }
