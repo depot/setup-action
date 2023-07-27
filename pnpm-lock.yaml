@@ -18,8 +18,8 @@ dependencies:
     specifier: ^1.7.2
     version: 1.7.2
   '@depot/actions-public-oidc-client':
-    specifier: ^0.1.0
-    version: 0.1.0
+    specifier: ^1.0.0
+    version: 1.0.0
 
 devDependencies:
   '@tsconfig/node16':
@@ -103,8 +103,8 @@ packages:
       uuid: 3.4.0
     dev: false
 
-  /@depot/actions-public-oidc-client@0.1.0:
-    resolution: {integrity: sha512-Si9mee5IR/dRbiMmk9xD3jGxc9vhYS0hEieCVeQdFC9jnsfYIb0wDeTqpl076VneyH33C7ajUJNm9yxBzt8gUA==}
+  /@depot/actions-public-oidc-client@1.0.0:
+    resolution: {integrity: sha512-zGWYMCTYC6oPKzRWEN29MdYks7i3IkGEJyaB4LB2R6Lyk73u63fSkgnqTPpil1w184/tQTSQg89faokroPPfvw==}
     dependencies:
       '@actions/core': 1.10.0
       '@actions/github': 5.1.1
