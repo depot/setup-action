@@ -5431,7 +5431,7 @@ function _unique(values) {
 
 /***/ }),
 
-/***/ 4224:
+/***/ 4921:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -5500,7 +5500,7 @@ async function getIDToken(aud) {
     core.info(`Waiting for OIDC auth challenge ${challengeCode}`);
   }, 1e3);
   try {
-    for (let i = 1; i < 5; i++) {
+    for (let i = 1; i < 60; i++) {
       const res2 = await client.post(exchangeURL, "");
       if (res2.message.statusCode === 200)
         return await res2.readBody();
@@ -14859,7 +14859,7 @@ const core = __importStar(__nccwpck_require__(3031));
 const github = __importStar(__nccwpck_require__(9060));
 const http = __importStar(__nccwpck_require__(9875));
 const toolCache = __importStar(__nccwpck_require__(4723));
-const publicOIDC = __importStar(__nccwpck_require__(4224));
+const publicOIDC = __importStar(__nccwpck_require__(4921));
 const path = __importStar(__nccwpck_require__(1017));
 const client = new http.HttpClient('depot-setup-action');
 async function run() {
