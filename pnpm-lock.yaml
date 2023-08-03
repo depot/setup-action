@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@actions/core':
-    specifier: ^1.6.0
-    version: 1.6.0
+    specifier: ^1.9.1
+    version: 1.9.1
   '@actions/github':
     specifier: ^5.1.1
     version: 5.1.1
@@ -53,10 +53,11 @@ packages:
       uuid: 8.3.2
     dev: false
 
-  /@actions/core@1.6.0:
-    resolution: {integrity: sha512-NB1UAZomZlCV/LmJqkLhNTqtKfFXJZAUPcfl/zqG7EfsQdeUJtaWO98SGbuQ3pydJ3fHl2CvI/51OKYlCYYcaw==}
+  /@actions/core@1.9.1:
+    resolution: {integrity: sha512-5ad+U2YGrmmiw6du20AQW5XuWo7UKN2052FjSV7MX+Wfjf8sCqcsZe62NfgHys4QI4/Y+vQvLKYL8jWtA1ZBTA==}
     dependencies:
-      '@actions/http-client': 1.0.11
+      '@actions/http-client': 2.1.0
+      uuid: 8.3.2
     dev: false
 
   /@actions/exec@1.1.1:
@@ -95,7 +96,7 @@ packages:
   /@actions/tool-cache@1.7.2:
     resolution: {integrity: sha512-GYlcgg/PK2RWBrGG2sFg6s7im3S94LMKuqAv8UPDq/pGTZbuEvmN4a95Fn1Z19OE+vt7UbUHeewOD5tEBT+4TQ==}
     dependencies:
-      '@actions/core': 1.6.0
+      '@actions/core': 1.9.1
       '@actions/exec': 1.1.1
       '@actions/http-client': 1.0.11
       '@actions/io': 1.1.2
