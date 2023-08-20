@@ -1,24 +1,36 @@
 {
   "private": true,
   "scripts": {
-    "build": "ncc build -o dist src/index.ts",
+    "build": "node build.cjs",
     "fmt": "prettier --write .",
-    "fmt:check": "prettier --check ."
+    "fmt:check": "prettier --check .",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@actions/core": "^1.6.0",
+    "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",
-    "@actions/http-client": "^1.0.11",
-    "@actions/tool-cache": "^1.7.2",
+    "@actions/http-client": "^2.1.1",
+    "@actions/tool-cache": "^2.0.1",
     "@depot/actions-public-oidc-client": "^1.0.0"
   },
   "devDependencies": {
-    "@tsconfig/node16": "^1.0.2",
-    "@types/node": "16.x",
-    "@vercel/ncc": "^0.33.3",
-    "prettier": "^2.6.1",
-    "prettier-plugin-organize-imports": "^2.3.4",
-    "prettier-plugin-pkg": "^0.11.1",
-    "typescript": "^4.6.3"
+    "@tsconfig/node16": "^16.1.0",
+    "@types/node": "~20.5.1",
+    "esbuild": "^0.19.2",
+    "prettier": "^3.0.2",
+    "prettier-plugin-organize-imports": "^3.2.3",
+    "prettier-plugin-pkg": "^0.18.0",
+    "typescript": "^5.1.6"
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "plugins": [
+      "prettier-plugin-pkg",
+      "prettier-plugin-organize-imports"
+    ]
   }
 }
