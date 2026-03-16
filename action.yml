@@ -20,3 +20,9 @@ inputs:
       and save the returned token as environment a `DEPOT_TOKEN` environment variable.
     default: 'false'
     required: false
+  configure-docker:
+    description: |-
+      If set to true, the action will run `depot configure-docker` after installing
+      the Depot CLI.
+    default: 'false'
+    required: false

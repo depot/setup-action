@@ -1,4 +1,5 @@
 import * as core from '@actions/core'
+import * as exec from '@actions/exec'
 import * as github from '@actions/github'
 import * as http from '@actions/http-client'
 import * as toolCache from '@actions/tool-cache'
@@ -65,6 +66,11 @@ async function run() {
         }
       }
     }
+  }
+
+  if (core.getBooleanInput('configure-docker')) {
+    core.info('Configuring Docker to use Depot')
+    await exec.exec('depot', ['configure-docker'])
   }
 }
 
