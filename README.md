@@ -26,7 +26,7 @@ jobs:
       - run: depot ...
 ```
 
-Install the CLI and configure Docker to use Depots buildx builders:
+Install the CLI and configure Docker to use Depot's buildx builders:
 
 ```yaml
 jobs:
